@@ -118,6 +118,10 @@ var schemaYAML = typed.YAMLObject(`types:
       type:
         scalar: boolean
       default: false
+    - name: allowHostUsers
+      type:
+        scalar: boolean
+      default: false
     - name: allowPrivilegeEscalation
       type:
         scalar: boolean

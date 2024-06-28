@@ -29,6 +29,7 @@ type SecurityContextConstraintsApplyConfiguration struct {
 	AllowHostPorts                   *bool                                                `json:"allowHostPorts,omitempty"`
 	AllowHostPID                     *bool                                                `json:"allowHostPID,omitempty"`
 	AllowHostIPC                     *bool                                                `json:"allowHostIPC,omitempty"`
+	AllowHostUsers                   *bool                                                `json:"allowHostUsers,omitempty"`
 	DefaultAllowPrivilegeEscalation  *bool                                                `json:"defaultAllowPrivilegeEscalation,omitempty"`
 	AllowPrivilegeEscalation         *bool                                                `json:"allowPrivilegeEscalation,omitempty"`
 	SELinuxContext                   *SELinuxContextStrategyOptionsApplyConfiguration     `json:"seLinuxContext,omitempty"`
@@ -352,6 +353,14 @@ func (b *SecurityContextConstraintsApplyConfiguration) WithAllowHostPID(value bo
 // If called multiple times, the AllowHostIPC field is set to the value of the last call.
 func (b *SecurityContextConstraintsApplyConfiguration) WithAllowHostIPC(value bool) *SecurityContextConstraintsApplyConfiguration {
 	b.AllowHostIPC = &value
+	return b
+}
+
+// WithAllowHostUsers sets the AllowHostUsers field in the declarative configuration to the given value
+// and returns the receiver, so that objects can be built by chaining "With" function invocations.
+// If called multiple times, the AllowHostUsers field is set to the value of the last call.
+func (b *SecurityContextConstraintsApplyConfiguration) WithAllowHostUsers(value bool) *SecurityContextConstraintsApplyConfiguration {
+	b.AllowHostUsers = &value
 	return b
 }
 
